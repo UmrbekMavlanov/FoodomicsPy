@@ -1,0 +1,1 @@
+"""FoodomicsPy===========Python tools for foodomics, spectroscopy, NMR, FTIR, and chemometrics."""__version__ = "0.1.0"from . import baselinefrom . import chemometricsfrom . import ftirfrom . import iofrom . import nmrfrom . import normalizationfrom . import plottingfrom . import preprocessingfrom . import statisticsfrom . import utilsfrom . import validation

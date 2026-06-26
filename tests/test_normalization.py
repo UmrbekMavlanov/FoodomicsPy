@@ -1,0 +1,1 @@
+import numpy as npimport foodomicspy as fpdef test_minmax_rows():    X = np.array([        [2, 4, 6],        [10, 20, 30],    ])    result = fp.normalization.minmax(X)    expected = np.array([        [0.0, 0.5, 1.0],        [0.0, 0.5, 1.0],    ])    np.testing.assert_allclose(result, expected)
