@@ -1,0 +1,1 @@
+def autoscale(df):    """    Autoscale a DataFrame.    Parameters    ----------    df : pandas.DataFrame        Data matrix with samples in rows and variables in columns.    Returns    -------    pandas.DataFrame        Autoscaled DataFrame.    """    return (df - df.mean()) / df.std()
