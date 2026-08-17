@@ -1,0 +1,93 @@
+Metadata-Version: 2.4
+Name: foodomicspy
+Version: 0.1.0
+Summary: Python tools for foodomics, spectroscopy, and chemometrics.
+Author: Umrbek Mavlanov
+License-Expression: MIT
+Project-URL: Homepage, https://github.com/UmrbekMavlanov/FoodomicsPy
+Project-URL: Documentation, https://github.com/UmrbekMavlanov/FoodomicsPy#readme
+Project-URL: Repository, https://github.com/UmrbekMavlanov/FoodomicsPy
+Project-URL: Issues, https://github.com/UmrbekMavlanov/FoodomicsPy/issues
+Keywords: foodomics,chemometrics,spectroscopy,FTIR,NMR,PCA,PLS,food science
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Science/Research
+Classifier: Intended Audience :: Education
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Scientific/Engineering
+Classifier: Topic :: Scientific/Engineering :: Chemistry
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy<2,>=1.24
+Requires-Dist: pandas>=2.0
+Requires-Dist: scipy>=1.10
+Requires-Dist: scikit-learn>=1.3
+Requires-Dist: matplotlib>=3.7
+Requires-Dist: seaborn>=0.12
+Requires-Dist: plotly>=5.0
+Requires-Dist: statsmodels>=0.14
+Requires-Dist: openpyxl>=3.1
+Requires-Dist: h5py>=3.8
+Requires-Dist: nmrglue>=0.10
+Requires-Dist: brukeropusreader
+Provides-Extra: dev
+Requires-Dist: pytest>=7.0; extra == "dev"
+Requires-Dist: build>=1.0; extra == "dev"
+Requires-Dist: twine>=5.0; extra == "dev"
+Dynamic: license-file
+
+# FoodomicsPy
+
+**FoodomicsPy** is an open-source Python package for foodomics data analysis
+
+## Features
+
+- Read Bruker OPUS and HDF5 datasets
+- Spectral preprocessing (SNV, mean centering, autoscaling, Savitzky–Golay)
+- NMR spectral alignment
+- Partial least-squares (PLS) regression with cross-validation
+- Interactive FTIR and NMR visualization
+- Publication-ready plotting utilities
+
+## Installation
+
+```bash
+pip install foodomicspy
+```
+
+Or install the latest development version:
+
+```bash
+git clone https://github.com/UmrbekMavlanov/FoodomicsPy.git
+cd FoodomicsPy
+pip install .
+```
+
+## Quick example
+
+```python
+import foodomicspy as f
+
+# Read spectra
+df = f.io.read_hdf("spectra.h5")
+
+# Preprocess
+df = f.preprocessing.snv(df)
+
+# Perform PLS
+result = f.chemometrics.perform_pls(
+    X=df,
+    y=y,
+)
+
+# Plot results
+f.plotting.plot_pls(result)
+```
+
+## License
+
+Released under the MIT License.
